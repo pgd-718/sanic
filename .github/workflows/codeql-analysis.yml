@@ -1,40 +1,22 @@
-name: "CodeQL"
+name: CodeQL Analysis
 
 on:
   push:
-    branches:
-      - main
-      - "*LTS"
-  pull_request:
-    branches:
-      - main
-      - "*LTS"
-    types: [opened, synchronize, reopened, ready_for_review]
-  schedule:
-    - cron: '25 16 * * 0'
+    branches: [main]
 
 jobs:
   analyze:
-    if: github.event.pull_request.draft == false
-    name: Analyze
+    name: Analyze code with CodeQL
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'python' ]
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: ${{ matrix.language }}
-
-    - name: Autobuild
-      uses: github/codeql-action/autobuild@v1
-
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: python
+      - name: Analyze with CodeQL
+        uses: github/codeql-action/analyze@v2
+        with:
+          database: codeql-database
+          query: python-security-and-quality.qls
