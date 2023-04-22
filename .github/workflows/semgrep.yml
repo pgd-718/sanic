@@ -21,3 +21,4 @@ jobs:
         run: semgrep ci --exclude=examples --exclude=tests --exclude=docs .
         env:
           SEMGREP_APP_TOKEN: 01b30f1afe6d1ff494722bbe3c8082e347516cf073ee6b150fa31b5687c84c5e
+          
