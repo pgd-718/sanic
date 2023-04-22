@@ -15,7 +15,7 @@ jobs:
     name: Scan
     runs-on: ubuntu-20.04
     env:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      SEMGREP_APP_TOKEN: ${{ 906e586aeee4b5da59f1ea0094927807083bbd8a122e204340aca90046a96609 }}
     container:
       image: returntocorp/semgrep
     steps:
