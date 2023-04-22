@@ -20,4 +20,4 @@ jobs:
       image: returntocorp/semgrep
     steps:
     - uses: actions/checkout@v3
-    - run: semgrep ci --exclude=examples --exclude=tests --exclude=docs https://github.com/pgd-718/sanic.git
+    - run: semgrep ci --exclude=examples --exclude=tests --exclude=docs https://github.com/pgd-718/sanic
