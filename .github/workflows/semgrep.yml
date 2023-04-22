@@ -19,5 +19,6 @@ jobs:
     container:
       image: returntocorp/semgrep
     steps:
-    - uses: actions/checkout@v3
-    - run: semgrep ci --lang python --skip-unmodified
+    - uses: actions/checkout@v2
+    - name: Semgrep scan
+      run: semgrep ci --lang python --skip-unmodified
