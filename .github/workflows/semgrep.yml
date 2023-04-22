@@ -21,4 +21,3 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: semgrep ci --exclude=examples --exclude=tests --exclude=docs .
-
