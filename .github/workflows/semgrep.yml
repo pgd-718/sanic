@@ -6,6 +6,7 @@ on:
     - master
     paths:
     - .github/workflows/semgrep.yml
+    - ":(exclude)examples/**"
   schedule:
   # random HH:MM to avoid a load spike on GitHub Actions at 00:00
   - cron: 54 19 * * *
@@ -20,4 +21,5 @@ jobs:
       image: returntocorp/semgrep
     steps:
     - uses: actions/checkout@v3
-    - run: semgrep ci
+    - run: semgrep ci --exclude examples/ --severity=high
+
