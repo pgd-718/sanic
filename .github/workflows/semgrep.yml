@@ -20,5 +20,5 @@ jobs:
       - name: Semgrep Scan
         run: semgrep ci --exclude=examples --exclude=tests --exclude=docs .
         env:
-          SEMGREP_APP_TOKEN: 01b30f1afe6d1ff494722bbe3c8082e347516cf073ee6b150fa31b5687c84c5e
+          SEMGREP_APP_TOKEN: 72615276da0e85def433ac4d43c9a299ba71021740703d5ebf1e0756f31636bf
           
